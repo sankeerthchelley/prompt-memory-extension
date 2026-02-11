@@ -1,0 +1,519 @@
+/* Prompt Memory Extension - Styles */
+/* Modern design with dark mode support */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 450px;
+  max-height: 600px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  background: #fff;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.icon-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Search */
+.search-container {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 10px 35px 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  color: #999;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background: #f5f5f5;
+}
+
+.tab.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+/* Stats */
+.stats {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  gap: 8px;
+}
+
+.stats-divider {
+  color: #ccc;
+}
+
+/* Prompts List */
+.prompts-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: #f5f5f5;
+}
+
+.prompt-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.prompt-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.favorite-btn.active {
+  color: #ffc107;
+}
+
+.platform-tag {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.prompt-date {
+  color: #999;
+}
+
+.prompt-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.prompt-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  background: #f0f0f0;
+  color: #666;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+.prompt-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.prompt-actions button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.prompt-actions button:hover {
+  background: #f5f5f5;
+}
+
+.delete-btn:hover {
+  background: #ffebee !important;
+  border-color: #f44336 !important;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+  color: #666;
+}
+
+.supported-platforms {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.platform-badge {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  gap: 8px;
+  padding: 12px 15px;
+  background: #fff;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-btn {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.footer-btn:hover {
+  background: #f5f5f5;
+}
+
+.footer-btn.danger:hover {
+  background: #ffebee;
+  border-color: #f44336;
+  color: #f44336;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 400px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+.prompt-detail-text {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  white-space: pre-wrap;
+}
+
+.prompt-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.tags-section label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.tags-section input {
+  width: calc(100% - 60px);
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.tags-section button {
+  padding: 8px 15px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-footer button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-danger {
+  background: #f44336;
+  color: #fff;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 2000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode header,
+body.dark-mode .prompt-card,
+body.dark-mode footer,
+body.dark-mode .modal-content {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .search-container input,
+body.dark-mode .tab {
+  background: #2a2a2a;
+  border-color: #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .tab:hover {
+  background: #333;
+}
+
+body.dark-mode .tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+body.dark-mode .prompts-list {
+  background: #1a1a1a;
+}
+
+body.dark-mode .icon-btn:hover,
+body.dark-mode .footer-btn:hover,
+body.dark-mode .prompt-actions button:hover {
+  background: #333;
+}
+
+body.dark-mode .platform-tag,
+body.dark-mode .platform-badge {
+  background: #1e3a5f;
+  color: #64b5f6;
+}
+
+body.dark-mode .tag {
+  background: #333;
+  color: #ccc;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.hidden {
+  display: none;
+}
