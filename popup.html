@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Memory</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="header-top">
+        <h1>🧠 Prompt Memory</h1>
+        <div class="header-actions">
+          <button id="darkModeToggle" class="icon-btn" title="Toggle Dark Mode">
+            <span id="darkModeIcon">🌙</span>
+          </button>
+          <button id="settingsBtn" class="icon-btn" title="Settings">
+            ⚙️
+          </button>
+        </div>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search prompts..." />
+        <button id="clearSearch" class="clear-btn" title="Clear search">✕</button>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="favorites">⭐ Favorites</button>
+        <button class="tab" data-filter="chatgpt">ChatGPT</button>
+        <button class="tab" data-filter="claude">Claude</button>
+        <button class="tab" data-filter="gemini">Gemini</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <span id="promptCount">0 prompts</span>
+        <span class="stats-divider">•</span>
+        <span id="lastSaved">Never saved</span>
+      </div>
+    </header>
+
+    <!-- Prompts List -->
+    <div id="promptsList" class="prompts-list">
+      <!-- Prompts will be dynamically inserted here -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">📝</div>
+      <h3>No prompts yet</h3>
+      <p>Start using AI platforms and your prompts will be automatically saved here!</p>
+      <div class="supported-platforms">
+        <span>Supported:</span>
+        <span class="platform-badge">ChatGPT</span>
+        <span class="platform-badge">Claude</span>
+        <span class="platform-badge">Gemini</span>
+      </div>
+    </div>
+
+    <!-- Footer Actions -->
+    <footer>
+      <button id="exportBtn" class="footer-btn">
+        <span>📤</span> Export
+      </button>
+      <button id="importBtn" class="footer-btn">
+        <span>📥</span> Import
+      </button>
+      <button id="clearAllBtn" class="footer-btn danger">
+        <span>🗑️</span> Clear All
+      </button>
+    </footer>
+  </div>
+
+  <!-- Prompt Detail Modal -->
+  <div id="promptModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Prompt Details</h3>
+        <button class="close-modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="prompt-detail-text" id="modalPromptText"></div>
+        <div class="prompt-meta">
+          <span id="modalPlatform"></span>
+          <span id="modalDate"></span>
+        </div>
+        <div class="tags-section">
+          <label>Tags:</label>
+          <div id="modalTags" class="tags-container"></div>
+          <input type="text" id="newTagInput" placeholder="Add tag..." />
+          <button id="addTagBtn">Add</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="copyModalBtn" class="btn-primary">Copy</button>
+        <button id="deleteModalBtn" class="btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="importFileInput" accept=".json" style="display: none;" />
+  
+  <script src="popup.js"></script>
+</body>
+</html>
